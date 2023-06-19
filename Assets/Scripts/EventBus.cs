@@ -22,6 +22,7 @@ public static class EventBus
     {
         public static Action OnMainMenuWindowShow;
         public static Action OnPauseWindowShow;
+        public static Action OnPauseWindowHide;
         public static Action OnSettingsWindowShow;
         public static Action OnLeaderBoardWindowShow;
         public static Action<float> OnTimerChanged;

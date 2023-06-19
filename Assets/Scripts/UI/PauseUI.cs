@@ -20,13 +20,13 @@ public class PauseUI : MonoBehaviour
         _resumeButton.onClick.AddListener(() =>
         {
             EventBus.UIEvents.OnPauseWindowHide?.Invoke();
-            EventBus.UnPauseEvent?.Invoke();
+            EventBus.GameEvents.OnUnPause?.Invoke();
         });
         
         _restartButton.onClick.AddListener(() =>
         {
             EventBus.UIEvents.OnPauseWindowHide?.Invoke();
-            EventBus.StartLevelEvent?.Invoke();
+            EventBus.GameEvents.OnGameStarted?.Invoke();
         });
         
         _exitButton.onClick.AddListener(() =>
