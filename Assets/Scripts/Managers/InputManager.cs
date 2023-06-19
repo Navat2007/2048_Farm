@@ -17,8 +17,8 @@ public class InputManager : MonoBehaviour
         
         EventBus.GameEvents.OnGameStarted += OnStartLevel;
         EventBus.GameEvents.OnGameEnded += OnEndLevel;
-        //EventBus.GameEvents.OnPause += DisablePlayerInput;
-        //EventBus.GameEvents.OnUnPause += EnablePlayerInput;
+        EventBus.GameEvents.OnPause += DisablePlayerInput;
+        EventBus.GameEvents.OnUnPause += EnablePlayerInput;
         EventBus.UIEvents.OnMainMenuWindowShow += OnEndLevel;
     }
 
@@ -28,8 +28,8 @@ public class InputManager : MonoBehaviour
         
         EventBus.GameEvents.OnGameStarted -= OnStartLevel;
         EventBus.GameEvents.OnGameEnded -= OnEndLevel;
-        //EventBus.GameEvents.OnPause -= DisablePlayerInput;
-        //EventBus.GameEvents.OnUnPause -= EnablePlayerInput;
+        EventBus.GameEvents.OnPause -= DisablePlayerInput;
+        EventBus.GameEvents.OnUnPause -= EnablePlayerInput;
         EventBus.UIEvents.OnMainMenuWindowShow -= OnEndLevel;
     }
 
@@ -43,11 +43,13 @@ public class InputManager : MonoBehaviour
         if(Input.touches.Length > 0)
         {
             Touch t = Input.GetTouch(0);
+            
             if(t.phase == TouchPhase.Began)
             {
                 //save began touch 2d point
                 firstPressPos = new Vector2(t.position.x,t.position.y);
             }
+            
             if(t.phase == TouchPhase.Ended)
             {
                 //save ended touch 2d point
