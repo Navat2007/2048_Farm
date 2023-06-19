@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Roulette_0: -3135807023170391820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
