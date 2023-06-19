@@ -25,7 +25,7 @@ public class PauseUI : MonoBehaviour
         
         _restartButton.onClick.AddListener(() =>
         {
-            EventBus.UIEvents.OnPauseWindowHide?.Invoke();
+            EventBus.GameEvents.OnUnPause?.Invoke();
             EventBus.GameEvents.OnGameStarted?.Invoke();
         });
         
@@ -35,15 +35,16 @@ public class PauseUI : MonoBehaviour
             EventBus.UIEvents.OnMainMenuWindowShow?.Invoke();
         });
         
-        EventBus.UIEvents.OnPauseWindowShow += OnPauseWindowShow;
-        EventBus.UIEvents.OnPauseWindowHide += OnPauseWindowHide;
+        EventBus.GameEvents.OnPause += OnPauseWindowShow;
+        EventBus.GameEvents.OnUnPause += OnPauseWindowHide;
         
         _pausePanel.gameObject.SetActive(false);
     }
 
     private void OnDestroy()
     {
-        EventBus.UIEvents.OnPauseWindowShow -= OnPauseWindowShow;
+        EventBus.GameEvents.OnPause -= OnPauseWindowShow;
+        EventBus.GameEvents.OnUnPause -= OnPauseWindowHide;
     }
 
     private void OnPauseWindowShow()

@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         PLAY,
-        PAUSE
+        PAUSE,
+        MENU
     }
     
     public GameState GetState => _state;
@@ -21,13 +22,17 @@ public class GameManager : MonoBehaviour
         //Time.timeScale = 0;
         
         EventBus.GameEvents.OnGameStarted += OnResume;
-        EventBus.GameEvents.OnGameEnded += OnPause;
+        EventBus.GameEvents.OnGameEnded += OnGameEnd;
+        EventBus.GameEvents.OnPause += OnPause;
+        EventBus.GameEvents.OnUnPause += OnResume;
     }
 
     private void OnDestroy()
     {
         EventBus.GameEvents.OnGameStarted -= OnResume;
-        EventBus.GameEvents.OnGameEnded -= OnPause;
+        EventBus.GameEvents.OnGameEnded -= OnGameEnd;
+        EventBus.GameEvents.OnPause -= OnPause;
+        EventBus.GameEvents.OnUnPause -= OnResume;
     }
 
     private async void Start()
@@ -42,14 +47,17 @@ public class GameManager : MonoBehaviour
 
     private void OnResume()
     {
-        //Time.timeScale = 1;
         _state = GameState.PLAY;
     }
-
-    private void OnPause(bool success)
+    
+    private void OnPause()
     {
-        //Time.timeScale = 0;
         _state = GameState.PAUSE;
+    }
+    
+    private void OnGameEnd(bool success)
+    {
+        _state = GameState.MENU;
     }
 
     private async void OnApplicationQuit()

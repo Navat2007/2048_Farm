@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUI : BasePanelsUI
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _maxScoreText;
+    [SerializeField] private Button _pauseButton;
 
     public void NewGame()
     {
@@ -13,6 +15,14 @@ public class GameUI : BasePanelsUI
 
     protected override void Awake()
     {
+        if (_pauseButton != null)
+        {
+            _pauseButton.onClick.AddListener(() =>
+            {
+                EventBus.GameEvents.OnPause?.Invoke();
+            });
+        }
+
         EventBus.GameEvents.OnGameStarted += OnStartGame;
         EventBus.GameEvents.OnGameEnded += OnEndGame;
         EventBus.ScoreEvents.OnScoreChanged += OnScoreChanged;
