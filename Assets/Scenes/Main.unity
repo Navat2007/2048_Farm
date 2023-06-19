@@ -11633,7 +11633,7 @@ GameObject:
   - component: {fileID: 813783935882658671}
   - component: {fileID: 813783935882658670}
   m_Layer: 5
-  m_Name: Btn_MainButton_Green
+  m_Name: PlayBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23591,7 +23591,7 @@ GameObject:
   - component: {fileID: 3937024338342639473}
   - component: {fileID: 3937024338342639472}
   m_Layer: 5
-  m_Name: Btn_MainButton_Blue
+  m_Name: SettingsBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
