@@ -149,6 +149,7 @@ public class InputManager : MonoBehaviour
 
     private void OnStartLevel()
     {
+        DisablePlayerInput();
         EnablePlayerInput();
         _playerInput.UI.Enable();
     }

@@ -31,14 +31,15 @@ public class PauseUI : MonoBehaviour
         
         _exitButton.onClick.AddListener(() =>
         {
-            EventBus.UIEvents.OnPauseWindowHide?.Invoke();
+            OnPauseWindowHide();
+            
             EventBus.UIEvents.OnMainMenuWindowShow?.Invoke();
         });
         
         EventBus.GameEvents.OnPause += OnPauseWindowShow;
         EventBus.GameEvents.OnUnPause += OnPauseWindowHide;
-        
-        _pausePanel.gameObject.SetActive(false);
+
+        OnPauseWindowHide();
     }
 
     private void OnDestroy()

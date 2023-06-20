@@ -1,29 +1,32 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private Transform _panel;
-    [SerializeField] private Transform _winGamePanel;
-    [SerializeField] private Transform _loseGamePanel;
+    [SerializeField] private Button _restartButton;
+    [SerializeField] private Button _exitButton;
     [SerializeField] private TMP_Text _scoreText;
-    
-    public void CloseButton()
-    {
-        EventBus.UIEvents.OnMainMenuWindowShow?.Invoke();
-        
-        HidePanels();
-    }
-    
-    public void RestartButton()
-    {
-        EventBus.GameEvents.OnGameStarted?.Invoke();
-    }
     
     private void Awake()
     {
+        _restartButton.onClick.AddListener(() =>
+        {
+            EventBus.GameEvents.OnGameStarted?.Invoke();
+        });
+        
+        _exitButton.onClick.AddListener(() =>
+        {
+            EventBus.UIEvents.OnMainMenuWindowShow?.Invoke();
+        
+            HidePanels();
+        });
+        
         EventBus.GameEvents.OnGameStarted += HidePanels;
         EventBus.GameEvents.OnGameEnded += OnEndGame;
+        
+        HidePanels();
     }
 
     private void OnDestroy()
@@ -40,22 +43,12 @@ public class GameOverUI : MonoBehaviour
     private void HidePanels()
     {
         _panel.gameObject.SetActive(false);
-        _winGamePanel.gameObject.SetActive(false);
-        _loseGamePanel.gameObject.SetActive(false);
     }
     
     private void OnEndGame(bool success)
     {
         _panel.gameObject.SetActive(true);
         
-        if (success)
-        {
-            _winGamePanel.gameObject.SetActive(true);
-        }
-        else
-        {
-            _loseGamePanel.gameObject.SetActive(true);
-            _scoreText.SetText(ServiceLocator.CurrencyManager.GetCurrency(Currency.SCORE).ToString());
-        }
+        _scoreText.SetText(ServiceLocator.CurrencyManager.GetCurrency(Currency.SCORE).ToString());
     }
 }

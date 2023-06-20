@@ -8,11 +8,6 @@ public class GameUI : BasePanelsUI
     [SerializeField] private TMP_Text _maxScoreText;
     [SerializeField] private Button _pauseButton;
 
-    public void NewGame()
-    {
-        EventBus.GameEvents.OnGameStarted?.Invoke();
-    }
-
     protected override void Awake()
     {
         if (_pauseButton != null)
@@ -25,6 +20,7 @@ public class GameUI : BasePanelsUI
 
         EventBus.GameEvents.OnGameStarted += OnStartGame;
         EventBus.GameEvents.OnGameEnded += OnEndGame;
+        EventBus.UIEvents.OnMainMenuWindowShow += OnEndGame;
         EventBus.ScoreEvents.OnScoreChanged += OnScoreChanged;
         EventBus.ScoreEvents.OnMaxScoreChanged += OnMaxScoreChanged;
     }
@@ -33,6 +29,7 @@ public class GameUI : BasePanelsUI
     {
         EventBus.GameEvents.OnGameStarted -= OnStartGame;
         EventBus.GameEvents.OnGameEnded -= OnEndGame;
+        EventBus.UIEvents.OnMainMenuWindowShow += OnEndGame;
         EventBus.ScoreEvents.OnScoreChanged -= OnScoreChanged;
         EventBus.ScoreEvents.OnMaxScoreChanged -= OnMaxScoreChanged;
     }
@@ -40,6 +37,11 @@ public class GameUI : BasePanelsUI
     private void OnStartGame()
     {
         _panel.gameObject.SetActive(true);
+    }
+    
+    private void OnEndGame()
+    {
+        _panel.gameObject.SetActive(false);
     }
     
     private void OnEndGame(bool obj)
