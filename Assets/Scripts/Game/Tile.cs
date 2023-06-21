@@ -18,8 +18,8 @@ public class Tile : MonoBehaviour
 
     private void Awake()
     {
-        _background = GetComponent<Image>();
-        _text = GetComponentInChildren<TextMeshProUGUI>();
+        // _background = GetComponent<Image>();
+        // _text = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void SetState(TileState state, int number)
@@ -27,9 +27,9 @@ public class Tile : MonoBehaviour
         this.state = state;
         this.number = number;
 
-        _background.color = state.backgroundColor;
-        _text.color = state.textColor;
-        _text.text = number.ToString();
+        // _background.color = state.backgroundColor;
+        // _text.color = state.textColor;
+        // _text.text = number.ToString();
         _image.sprite = state.sprite;
         
         _image.gameObject.SetActive(false);
