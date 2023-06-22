@@ -8,6 +8,12 @@ public class ButtonClickAudio : MonoBehaviour
 
     private void Awake()
     {
+        
+        if(_button == null)
+        {
+            _button = GetComponent<Button>();
+        }
+        
         _button.onClick.AddListener(() =>
         {
             ServiceLocator.AudioManager.PlaySound(_clickClip);
