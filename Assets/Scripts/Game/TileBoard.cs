@@ -153,7 +153,6 @@ public class TileBoard : MonoBehaviour
         if (newCell != null)
         {
             tile.MoveTo(newCell);
-            //EventBus.GameEvents.OnTileMoved?.Invoke();
             return true;
         }
 
