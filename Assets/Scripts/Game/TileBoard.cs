@@ -85,6 +85,7 @@ public class TileBoard : MonoBehaviour
             tile.SetState(_tileStates[0], 2);
             tile.Spawn(_grid.GetRandomEmptyCell());
             _tiles.Add(tile);
+            EventBus.GameEvents.OnTileSpawned?.Invoke();
         }
     }
     
@@ -122,6 +123,7 @@ public class TileBoard : MonoBehaviour
         }
 
         if (changed) {
+            EventBus.GameEvents.OnTileMoved?.Invoke();
             StartCoroutine(WaitForChanges());
         }
     }
@@ -151,6 +153,7 @@ public class TileBoard : MonoBehaviour
         if (newCell != null)
         {
             tile.MoveTo(newCell);
+            //EventBus.GameEvents.OnTileMoved?.Invoke();
             return true;
         }
 

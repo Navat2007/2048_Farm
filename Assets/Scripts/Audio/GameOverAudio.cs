@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameOverAudio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private AudioClip _gameOverClip;
+    
+    private void Awake()
     {
-        
+        EventBus.GameEvents.OnGameEnded += OnEndGame;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        EventBus.GameEvents.OnGameEnded -= OnEndGame;
+    }
+
+    private void OnEndGame(bool obj)
+    {
+        ServiceLocator.AudioManager.PlaySound(_gameOverClip);
     }
 }

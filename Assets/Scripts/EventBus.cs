@@ -10,6 +10,8 @@ public static class EventBus
         public static Action OnPause;
         public static Action OnUnPause;
         public static Action<int> OnTileMerged;
+        public static Action OnTileSpawned;
+        public static Action OnTileMoved;
     }
     
     public static class ScoreEvents

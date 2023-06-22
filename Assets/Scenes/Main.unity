@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224408218}
   - component: {fileID: 224408219}
+  - component: {fileID: 224408220}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
@@ -175,6 +176,21 @@ MonoBehaviour:
   _scoreText: {fileID: 1083505154}
   _maxScoreText: {fileID: 1515497364}
   _pauseButton: {fileID: 8474191495869086273}
+--- !u!114 &224408220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224408217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449adc02e842a1141ba2690713f7ef3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnClip: {fileID: 0}
+  _moveClip: {fileID: 8300000, guid: f6c9faae7631a554bb203f10aed79230, type: 3}
+  _mergeClip: {fileID: 8300000, guid: 2c0ea1413990ba64fa35a49fd6adc5ce, type: 3}
 --- !u!1 &383095771
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +204,7 @@ GameObject:
   - component: {fileID: 383095775}
   - component: {fileID: 383095774}
   - component: {fileID: 383095777}
+  - component: {fileID: 383095778}
   m_Layer: 5
   m_Name: Button_GiveUp
   m_TagString: Untagged
@@ -320,6 +337,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &383095778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383095771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!1 &430465643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1191,7 @@ GameObject:
   - component: {fileID: 530315222}
   - component: {fileID: 530315221}
   - component: {fileID: 530315224}
+  - component: {fileID: 530315225}
   m_Layer: 5
   m_Name: Button_ReStart
   m_TagString: Untagged
@@ -1292,6 +1324,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &530315225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530315218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!1 &561525318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 980491138}
   - component: {fileID: 980491139}
+  - component: {fileID: 980491140}
   m_Layer: 5
   m_Name: GameOverUI
   m_TagString: Untagged
@@ -1885,6 +1932,19 @@ MonoBehaviour:
   _restartButton: {fileID: 530315221}
   _exitButton: {fileID: 383095774}
   _scoreText: {fileID: 1420662521}
+--- !u!114 &980491140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980491137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae9d98ccbd2a83498a36da4198f476b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverClip: {fileID: 0}
 --- !u!1 &1083505152
 GameObject:
   m_ObjectHideFlags: 0
@@ -4706,6 +4766,7 @@ GameObject:
   - component: {fileID: 813783935882658671}
   - component: {fileID: 813783935882658670}
   - component: {fileID: 813783935882658673}
+  - component: {fileID: 813783935882658674}
   m_Layer: 5
   m_Name: PlayBtn
   m_TagString: Untagged
@@ -4838,6 +4899,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &813783935882658674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813783935882658668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!224 &813783937088709696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6937,6 +7012,7 @@ GameObject:
   - component: {fileID: 3937024338342639473}
   - component: {fileID: 3937024338342639472}
   - component: {fileID: 3937024338342639488}
+  - component: {fileID: 3937024338342639489}
   m_Layer: 5
   m_Name: SettingsBtn
   m_TagString: Untagged
@@ -6987,6 +7063,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3937024338342639489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937024338342639486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!222 &3938541105708987761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7439,6 +7529,7 @@ GameObject:
   - component: {fileID: 8116547748759492625}
   - component: {fileID: 7735062263725403071}
   - component: {fileID: 8116547748759492626}
+  - component: {fileID: 8116547748759492627}
   m_Layer: 5
   m_Name: Button_GiveUp
   m_TagString: Untagged
@@ -8569,6 +8660,7 @@ GameObject:
   - component: {fileID: 2121116698391395698}
   - component: {fileID: 7319065237286224884}
   - component: {fileID: 7319065237286224885}
+  - component: {fileID: 7319065237286224886}
   m_Layer: 5
   m_Name: Button_Continue
   m_TagString: Untagged
@@ -8950,6 +9042,7 @@ GameObject:
   - component: {fileID: 188855309727452486}
   - component: {fileID: 1652809844126596734}
   - component: {fileID: 8080602030962066105}
+  - component: {fileID: 8080602030962066106}
   m_Layer: 5
   m_Name: Button_Setting
   m_TagString: Untagged
@@ -9149,6 +9242,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7319065237286224886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611481977160478567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 7319065237286224884}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!224 &7328309989717541985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9646,6 +9753,7 @@ GameObject:
   - component: {fileID: 8221522216384981336}
   - component: {fileID: 5402366705607440721}
   - component: {fileID: 8221522216384981337}
+  - component: {fileID: 8221522216384981338}
   m_Layer: 5
   m_Name: Button_Close
   m_TagString: Untagged
@@ -9949,6 +10057,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8080602030962066106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228476511662814554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!114 &8116547748759492625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10001,6 +10123,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8116547748759492627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722505970598643920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!222 &8161741815144114368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10097,6 +10233,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8221522216384981338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7930459171564505634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 5402366705607440721}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!224 &8232852128503637310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10398,6 +10548,7 @@ GameObject:
   - component: {fileID: 8474191495869086274}
   - component: {fileID: 8474191495869086273}
   - component: {fileID: 8474191495869086280}
+  - component: {fileID: 8474191495869086281}
   m_Layer: 5
   m_Name: PauseBtn
   m_TagString: Untagged
@@ -10427,6 +10578,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8474191495869086281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474191495869086279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!224 &8486594425450130287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10710,6 +10875,7 @@ GameObject:
   - component: {fileID: 3223709516981105014}
   - component: {fileID: 5918234665551419179}
   - component: {fileID: 9002506531014727809}
+  - component: {fileID: 9002506531014727810}
   m_Layer: 5
   m_Name: Button_ReStart
   m_TagString: Untagged
@@ -10739,6 +10905,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9002506531014727810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002506531014727808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477db4504b1b2441aee9b9b12aabdb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _clickClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
 --- !u!224 &9002686413509328610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10849,9 +11029,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6636713505677756327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e9c2190cf969d1d40bbe64b79ca06f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playUpClip: 1
+  _playDownClip: 0
+  _pointerUpClip: {fileID: 8300000, guid: b786b34a2cac40148891177614d9d15e, type: 3}
+  _pointerDownClip: {fileID: 0}
 --- !u!224 &9126876615665758449
 RectTransform:
   m_ObjectHideFlags: 0

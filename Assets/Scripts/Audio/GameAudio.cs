@@ -1,18 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class GameAudio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private AudioClip _spawnClip;
+    [SerializeField] private AudioClip _moveClip;
+    [SerializeField] private AudioClip _mergeClip;
+    
+    private void Awake()
     {
-        
+        EventBus.GameEvents.OnTileSpawned += OnSpawned;
+        EventBus.GameEvents.OnTileMerged += OnMerge;
+        EventBus.GameEvents.OnTileMoved += OnMove;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        EventBus.GameEvents.OnTileSpawned -= OnSpawned;
+        EventBus.GameEvents.OnTileMerged -= OnMerge;
+        EventBus.GameEvents.OnTileMoved -= OnMove;
+    }
+    
+    private void OnSpawned()
+    {
+        ServiceLocator.AudioManager.PlaySound(_spawnClip);
+    }
+
+    private void OnMove()
+    {
+        ServiceLocator.AudioManager.PlaySound(_moveClip);
+    }
+    
+    private void OnMerge(int index)
+    {
+        ServiceLocator.AudioManager.PlaySound(_mergeClip);
     }
 }
