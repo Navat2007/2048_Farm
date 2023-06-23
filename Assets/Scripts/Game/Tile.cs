@@ -83,10 +83,13 @@ public class Tile : MonoBehaviour
 
         Vector3 from = transform.position;
 
-        while (elapsed < duration)
+        while (elapsed < 1)
         {
-            transform.position = Vector3.Lerp(from, to, elapsed / duration);
-            elapsed += Time.deltaTime;
+            elapsed += Time.deltaTime / duration;
+            transform.position = Vector3.Lerp(from, to, Mathf.SmoothStep(0, 1, elapsed));
+            
+            // transform.position = Vector3.Lerp(from, to, elapsed / duration);
+            // elapsed += Time.deltaTime;
             yield return null;
         }
 
