@@ -40,9 +40,6 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = -1;
         
         ServiceLocator.CheckServices();
-        
-        await ServiceLocator.SaveLoadManager.Init();
-        ServiceLocator.SaveLoadManager.LoadCurrency();
     }
 
     private void OnResume()
@@ -58,10 +55,5 @@ public class GameManager : MonoBehaviour
     private void OnGameEnd(bool success)
     {
         _state = GameState.MENU;
-    }
-
-    private async void OnApplicationQuit()
-    {
-        await ServiceLocator.SaveLoadManager.AsyncSave();
     }
 }

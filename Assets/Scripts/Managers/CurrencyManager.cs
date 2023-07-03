@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -45,6 +46,11 @@ public class CurrencyManager : MonoBehaviour
 
         EventBus.GameEvents.OnGameStarted += OnLevelStart;
         EventBus.GameEvents.OnTileMerged += OnTileMerged;
+    }
+
+    private void Start()
+    {
+        SetCurrency(Currency.MAX_SCORE, ServiceLocator.SaveLoadManager.LoadFloat("score"));
     }
 
     private void OnDestroy()

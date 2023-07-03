@@ -53,18 +53,18 @@ public class SettingsUI : BasePanelsUI
         const float defaultSoundVolume = 0.5f;
         const float defaultMusicVolume = 0.05f;
         
-        if (await SaveSystemAPI.ExistsAsync(EffectsVolumeKey))
+        if (PlayerPrefs.HasKey(EffectsVolumeKey))
         {
-            _effectsSlider.value = await SaveSystemAPI.LoadAsync<float>(EffectsVolumeKey);
+            _effectsSlider.value = ServiceLocator.SaveLoadManager.LoadFloat(EffectsVolumeKey);
         }
         else
         {
             _effectsSlider.value = defaultSoundVolume;
         }
         
-        if (await SaveSystemAPI.ExistsAsync(MusicVolumeKey))
+        if (PlayerPrefs.HasKey(MusicVolumeKey))
         {
-            _musicSlider.value = await SaveSystemAPI.LoadAsync<float>(MusicVolumeKey);
+            _musicSlider.value = ServiceLocator.SaveLoadManager.LoadFloat(MusicVolumeKey);
         }
         else
         {

@@ -50,5 +50,7 @@ public class GameOverUI : MonoBehaviour
         _panel.gameObject.SetActive(true);
         
         _scoreText.SetText(ServiceLocator.CurrencyManager.GetCurrency(Currency.SCORE).ToString());
+        
+        EventBus.AdsEvents.OnAdsNeedToShow?.Invoke();
     }
 }

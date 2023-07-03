@@ -23,7 +23,7 @@ public class GameAudio : MonoBehaviour
     
     private void OnSpawned()
     {
-        ServiceLocator.AudioManager.PlaySound(_spawnClip);
+        //ServiceLocator.AudioManager.PlaySound(_spawnClip);
     }
 
     private void OnMove()

@@ -1,65 +1,36 @@
-using System.Threading.Tasks;
-using Bayat.SaveSystem;
 using UnityEngine;
 
 public class SaveLoadManager : MonoBehaviour
 {
-    
-    private Save _save;
-
-    public async Task Init()
+    public void SaveFloat(string key, float value)
     {
-        _save = await Load();
-    }
-
-    public void LoadCurrency()
-    {
-        Debug.Log($"{_save.GetMaxScore()} max score");
-        ServiceLocator.CurrencyManager.SetCurrency(Currency.MAX_SCORE, _save.GetMaxScore());
+        PlayerPrefs.SetFloat(key, value);
     }
     
-    public async Task AsyncSave()
+    public int LoadInt(string key)
     {
-        _save.SetAllData();
-        await SaveSystemAPI.SaveAsync("save.bin", _save);
-    }
-
-    public void Save(bool autoSave = false)
-    {
-        _save.SetAllData();
-        SaveSystemAPI.SaveAsync("save.bin", _save);
+        return PlayerPrefs.GetInt(key, 0);
     }
     
-    public async void Reset()
+    public float LoadFloat(string key)
     {
-        await SaveSystemAPI.DeleteAsync("save.bin");
+        return PlayerPrefs.GetFloat(key, 0);
     }
     
     private void Awake()
     {
         ServiceLocator.SaveLoadManager = this;
+        
+        EventBus.ScoreEvents.OnMaxScoreChanged += OnMaxScoreChanged;
+    }
+
+    private void OnDestroy()
+    {
+        EventBus.ScoreEvents.OnMaxScoreChanged -= OnMaxScoreChanged;
     }
     
-    private async Task<Save> Load()
+    private void OnMaxScoreChanged(float value)
     {
-        if (!await SaveSystemAPI.ExistsAsync("save.bin")) 
-            return new Save();
-        
-        return await SaveSystemAPI.LoadAsync<Save>("save.bin");
+        SaveFloat("score", value);
     }
-}
-
-public class Save
-{
-    [SerializeField] private float _maxScore;
-    [SerializeField] private float _time;
-
-    public void SetAllData()
-    {
-        _maxScore = ServiceLocator.CurrencyManager.GetCurrency(Currency.MAX_SCORE);
-        _time = ServiceLocator.Timer.CurrentTime;
-    }
-
-    public float GetMaxScore() => _maxScore;
-    public float GetTime() => _time;
 }

@@ -37,12 +37,14 @@ public class AudioManager : MonoBehaviour
         {
             case AudioType.Music:
                 _mixer.SetFloat(MusicVolumeKey, ValueToVolume(volume));
-                SaveSystemAPI.SaveAsync(MusicVolumeKey, volume);
+                //await SaveSystemAPI.SaveAsync(MusicVolumeKey, volume);
+                ServiceLocator.SaveLoadManager.SaveFloat(MusicVolumeKey, volume);
                 break;
             
             case AudioType.Effects:
                 _mixer.SetFloat(EffectsVolumeKey, ValueToVolume(volume));
-                SaveSystemAPI.SaveAsync(EffectsVolumeKey, volume);
+                //await SaveSystemAPI.SaveAsync(EffectsVolumeKey, volume);
+                ServiceLocator.SaveLoadManager.SaveFloat(EffectsVolumeKey, volume);
                 break;
         }
     }
