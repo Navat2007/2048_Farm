@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         EventBus.GameEvents.OnUnPause -= OnResume;
     }
 
-    private async void Start()
+    private void Start()
     {
         Application.targetFrameRate = -1;
         

@@ -46,7 +46,7 @@ public class SettingsUI : BasePanelsUI
         EventBus.UIEvents.OnSettingsWindowShow -= OnSettingsWindowShow;
     }
 
-    protected override async void Start()
+    protected override void Start()
     {
         base.Start();
         

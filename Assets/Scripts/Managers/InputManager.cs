@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
         _playerInput = new PlayerInput();
 
         _playerInput.UI.Pause.performed += OnPause;
+        _playerInput.UI.GameOver.performed += OnGameOver;
 
         EventBus.GameEvents.OnGameStarted += OnStartLevel;
         EventBus.GameEvents.OnGameEnded += OnEndLevel;
@@ -33,6 +34,7 @@ public class InputManager : MonoBehaviour
     private void OnDestroy()
     {
         _playerInput.UI.Pause.performed -= OnPause;
+        _playerInput.UI.GameOver.performed -= OnGameOver;
 
         EventBus.GameEvents.OnGameStarted -= OnStartLevel;
         EventBus.GameEvents.OnGameEnded -= OnEndLevel;
@@ -172,6 +174,11 @@ public class InputManager : MonoBehaviour
         {
             EventBus.GameEvents.OnUnPause?.Invoke();
         }
+    }
+    
+    private void OnGameOver(InputAction.CallbackContext obj)
+    {
+        EventBus.GameEvents.OnGameEnded?.Invoke(false);
     }
 
     private void OnStartLevel()
