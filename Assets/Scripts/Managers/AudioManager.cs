@@ -20,6 +20,22 @@ public class AudioManager : MonoBehaviour
     {
         ServiceLocator.AudioManager = this;
     }
+    
+    void OnApplicationFocus(bool hasFocus)
+    {
+        Silence(!hasFocus);
+    }
+
+    void OnApplicationPause(bool isPaused)
+    {
+        Silence(isPaused);
+    }
+    
+    private void Silence(bool silence)
+    {
+        AudioListener.pause = silence;
+        AudioListener.volume = silence ? 0 : 1;
+    }
 
     public void PlaySound(AudioClip clip)
     {
